@@ -1,10 +1,11 @@
 package com.youlai.mall.sms.pojo.domain;
 
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import com.youlai.mall.sms.pojo.enums.CouponCategoryEnum;
-import com.youlai.mall.sms.pojo.enums.DistributeTargetEnum;
-import com.youlai.mall.sms.pojo.enums.ProductLineEnum;
-import com.youlai.mall.sms.pojo.vo.TemplateRuleVO;
+import com.youlai.mall.sms.pojo.enums.CouponOfferStateEnum;
+import com.youlai.mall.sms.pojo.enums.CouponUsedStateEnum;
+import com.youlai.mall.sms.pojo.enums.CouponVerifyStateEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,23 +22,14 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@TableName(value = "sms_coupon_template",autoResultMap = true)
 public class SmsCouponTemplate {
 
     /**
      * 主键自增ID
      */
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Long id;
-
-    /**
-     * 是否是可用状态
-     */
-    private Integer available;
-
-    /**
-     * 是否过期
-     */
-    private Integer expired;
 
     /**
      * 优惠券名称
@@ -60,9 +52,48 @@ public class SmsCouponTemplate {
     private CouponCategoryEnum category;
 
     /**
-     * 产品线
+     * 优惠券审核状态
+     * 0: 待审核
+     * 1: 已审核
      */
-    private ProductLineEnum productLine;
+    private CouponVerifyStateEnum verifyState;
+
+    /**
+     * 优惠券发放状态
+     * (已审核且在允许发放时间之内，才允许发放)
+     * 0: 未开始
+     * 1: 进行中
+     * 2: 已结束
+     */
+    private CouponOfferStateEnum offerState;
+
+    /**
+     * 优惠券发放最早时间
+     */
+    private Long offerStartTime;
+
+    /**
+     * 优惠券发放最晚时间
+     */
+    private Long offerEndTime;
+
+    /**
+     * 优惠券使用状态
+     * 0：未生效：（未审核，未到最早使用时间）
+     * 1：生效中（已审核，正在使用时间中）
+     * 2：已结束（超过最晚使用时间）
+     */
+    private CouponUsedStateEnum usedState;
+
+    /**
+     * 优惠券最早使用时间
+     */
+    private Long usedStartTime;
+
+    /**
+     * 优惠券最晚使用时间
+     */
+    private Long usedEndTime;
 
     /**
      * 总数
@@ -72,24 +103,23 @@ public class SmsCouponTemplate {
     /**
      * 优惠券模板编码
      */
-    private  String code;
-
-    /**
-     * 目标用户
-     */
-    private DistributeTargetEnum target;
+    private String code;
 
     /**
      * 优惠券规则
      */
-    private TemplateRuleVO rule;
+    @TableField(typeHandler = JacksonTypeHandler.class)
+    private CouponTemplateRule rule;
 
+    @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
+    @TableField(fill = FieldFill.INSERT)
     private String gmtCreatedBy;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date gmtModified;
 
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private String gmtModifiedBy;
-
 }

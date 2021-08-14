@@ -1,4 +1,7 @@
-[![](https://img.shields.io/badge/Author-有来技术团队-orange.svg)](https://gitee.com/wangjiabin-x/uh5)
+# 2021-08-14 18:11 因系统服务维护中，有需要体验小程序和微服务请先加我微信（haoxianrui），更新完成我会通知您
+
+
+[![](https://img.shields.io/badge/Author-有来技术-orange.svg)](https://gitee.com/wangjiabin-x/uh5)
 ![](https://img.shields.io/badge/youlai--mall-v2.0.0-blue)
 [![](https://img.shields.io/github/stars/hxrui/youlai-mall.svg?style=social&label=Stars)](https://github.com/hxrui/youlai-mall/stargazers)
 [![](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/hxrui/youlai-mall/blob/master/LICENSE)
@@ -11,14 +14,14 @@
 
 #### 项目简介
 
-[youlai-mall](https://gitee.com/youlaitech/youlai-mall) 是基于Spring Boot 2.5.0、Spring Cloud 2020 & Alibaba 2021、vue、element-ui、uni-app快速构建的一套全栈开源商城项目。
+[youlai-mall](https://gitee.com/youlaitech/youlai-mall) 是基于Spring Boot 2.5、Spring Cloud 2020 & Alibaba 2021、vue、element-ui、uni-app快速构建的一套全栈开源商城项目。
 
 项目采用微服务、前后端分离开发模式；汇集全栈主流的技术栈； 涉及 [后端微服务](https://gitee.com/youlaitech/youlai-mall) 、 [前端管理](https://gitee.com/youlaitech/youlai-mall-admin) 、 [微信小程序](https://gitee.com/youlaitech/youlai-mall-weapp) 和 [APP应用](https://gitee.com/youlaitech/youlai-mall-weapp) 等多端的开发。
 
 #### 项目特色
 - Spring Cloud + Vue + Docker全栈开发
 - 项目使用的都是当前主流的技术栈，无过度自定义封装，易学习理解和方便二次扩展
-- 基于Spring Boot 2.5.0、Spring Cloud 2020 & Alibaba 2021一站式微服务解决方案实现快速开发
+- 基于Spring Boot 2.5.2、Spring Cloud 2020 & Alibaba 2021一站式微服务解决方案实现快速开发
 - 完整的Spring Security OAuth2 认证中心统一认证授权，网关统一鉴权逻辑
 - 特有一套微服务+前后端分离的RBAC权限设计，实现Spring Cloud Gateway网关下的RESTful接口细粒度的统一鉴权和vue页面按钮级别权限控制
 - 基于vue-element-admin的后台前端解决方案，实现动态路由
@@ -44,7 +47,7 @@
 
 #### 项目架构流程图
 
-![](https://gitee.com/haoxr/image/raw/master/youlai-architecture.jpg)
+![](https://gitee.com/haoxr/image/raw/master/default/OAuth2.jpg)
 
 #### 技术栈
 
@@ -61,7 +64,7 @@
 | 微服务后台 | [youlai-mall](https://gitee.com/youlaitech/youlai-mall)      | 微信小程序 | [youlai-mall-weapp](https://gitee.com/youlaitech/youlai-mall-weapp) |
 | 管理前端   | [youlai-mall-admin](https://gitee.com/youlaitech/youlai-mall-admin) |APP应用    | [youlai-mall-app](https://gitee.com/youlaitech/youlai-mall-app) |
 
-#### 项目结构
+#### 项目结构 
 
 ``` lua
 youlai-mall
@@ -173,6 +176,8 @@ youlai-mall
 
 ## 联系信息
 因为微信交流群满200人只能通过邀请进入，如果想进入交流群学习可添加以下开发人员，备注“**有来**“由其拉进群。
+
+
 
 | ![](https://gitee.com/haoxr/image/raw/master/default/113__6c5ed5b1b73ea9cd4cf32848ed350c07_b9b214638a2a406e52dbf51e9bf9a2ef.png) | ![](https://gitee.com/haoxr/image/raw/master/hxr.jpg)        | ![](https://gitee.com/haoxr/image/raw/master/huawei.jpg)     | ![](https://gitee.com/haoxr/image/raw/master/default/1625149769(1).png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |

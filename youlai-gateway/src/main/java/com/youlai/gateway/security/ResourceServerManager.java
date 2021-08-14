@@ -42,7 +42,7 @@ public class ResourceServerManager implements ReactiveAuthorizationManager<Autho
     private final UrlPermRolesLocalCache urlPermRolesLocalCache;
 
     // 是否开启本地缓存
-    @Value("${local-cache.enabled}")
+    @Value("${local-cache.enabled:true}")
     private Boolean localCacheEnabled;
 
     @Override
@@ -82,7 +82,6 @@ public class ResourceServerManager implements ReactiveAuthorizationManager<Autho
         } else {
             urlPermRolesRules = redisTemplate.opsForHash().entries(GlobalConstants.URL_PERM_ROLES_KEY);
         }
-
 
         // 根据请求路径判断有访问权限的角色列表
         List<String> authorizedRoles = new ArrayList<>(); // 拥有访问权限的角色
